@@ -13,12 +13,17 @@
   display: flex;
   justify-content: space-between;
   background: #231234;
+  height: 100vh;
+  width: 100%;
   &__tit {
     padding-left: 100px;
     line-height: 11vh;
     font-weight: 700;
     font-size: 10vh;
     color: white;
+    @include tablet {
+      font-size: 8vh;
+    }
   }
   &__hola {
     color: #c4065d;
@@ -37,11 +42,11 @@
   }
   &__button {
     background-color: #c4065d;
-    width: 14vw;
-    height: 6vh;
+    padding: 10px;
     box-shadow: none;
     border: none;
     color: white;
+    font-size: 2vh;
     &:hover {
       background-color: #fa4598;
     }
@@ -54,38 +59,54 @@
     height: 70vh;
     width: fit-content;
     object-fit: contain;
+    @include tablet {
+      height: 50vh;
+      width: fit-content;
+    }
+    @include mobile {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
   }
 }
 
 .about {
   background-color: #372e56;
-  height: 100vh;
-  display: flex;
-  justify-content: space-around;
+  height: fit-content;
+
   &__contenedor {
-    width: 50vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: end;
     justify-content: center;
     padding: 50px;
     padding-right: 60px;
+    @include tablet {
+      margin-top: 20px;
+      padding: 10px 40px;
+      align-items: center;
+    }
   }
   &__img {
-    height: 70vh;
-    width: 70vh;
+    height: fit-content;
+    width: 45vw;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.3);
+    @include tablet {
+      width: 80vw;
+    }
   }
   &__col {
-    width: 50vw;
-    height: 100vh;
     padding-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include tablet {
+      text-align: center;
+      padding: 10px;
+    }
   }
 
   &__h2 {
@@ -93,6 +114,9 @@
     font-weight: 700;
     font-size: 8vh;
     margin-bottom: 0;
+    @include mobile {
+      font-size: 5vh;
+    }
   }
   &__h3 {
     font-weight: 600;
@@ -101,6 +125,12 @@
   &__p {
     padding-right: 20px;
     margin-bottom: 5px;
+    @include tablet {
+      margin-bottom: 0px;
+      padding: 0 20px;
+      font-weight: 500;
+      font-size: 3vh;
+    }
   }
   &__li {
     display: inline-block;
@@ -119,39 +149,42 @@
 }
 
 .project {
-  background: #231234;
-  height: 100vh;
   font-size: 3vh;
   &__contenedor {
     display: flex;
     justify-content: space-between;
+    background: #231234;
     height: fit-content;
+    width: 100%;
     align-items: center;
-    padding-top: 90px;
+    padding: 20px 0;
   }
-  &__txt {
+  &__col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
-    width: 60vw;
     padding-left: 70px;
+    @include tablet{
+      padding: 10px 20px;
+      text-align: center;
+    }
   }
-  &__h2{
+  &__h2 {
     padding-bottom: 10px;
     font-weight: 700;
-
   }
   &__img {
-    padding-right: 50px;
-    height: 60vh;
-    width: fit-content;
+    height: fit-content;
+    width: 35vw;
     object-fit: contain;
+    @include tablet{
+      width: 80vw;
+    }
   }
 }
 .timeline {
-  background: #372e56;
+  background-color: #372e56;
   padding-top: 40px;
   &__col {
     height: 100vh;
@@ -168,6 +201,9 @@
   }
   &__img {
     width: 35vw;
+    @include tablet{
+      width: 50vw;
+    }
 
     &:hover {
       transform: scale(1.1);
@@ -183,9 +219,9 @@
     background-color: #c4065d;
     box-shadow: none;
     border: none;
-    &--secondary{
-      background-color: #F7CDE0;
-      color:white;
+    &--secondary {
+      background-color: #f7cde0;
+      color: white;
       &:hover {
         background-color: #fa4598;
       }
@@ -194,15 +230,14 @@
       background-color: #fa4598;
     }
   }
-  &__a{
-    color:white;
-    &--secondary{
-      color: #4E4E4E;
-      &:hover{
-        color:white;
+  &__a {
+    color: white;
+    &--secondary {
+      color: #4e4e4e;
+      &:hover {
+        color: white;
       }
     }
-    
   }
 }
 .slider__img {
